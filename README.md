@@ -1,6 +1,6 @@
 # DAA
-| Attempt | #1 |
-| Hitika Rajesh Kumar | IIB2019021 |
-| Gaurav Yadav | IIB2019022 |
-| Aditya Raj | IIB2019023 |
-
+| Enrollment Number  | Name |
+| ------------- | ------------- |
+| IIB2019021  | Hitika   |
+| IIB2019022  | Gaurav  |
+| IIB2019023 | Aditya  |
