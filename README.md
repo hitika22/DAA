@@ -15,16 +15,7 @@ using divide and conquer algorithm.
 
 <hr />
 
-Input
-```
-First line of input contains two space seperated integers N and M.
-```
 
-Output
-```
-Number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m
-```
----
 
 
 ### Theory
