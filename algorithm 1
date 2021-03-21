@@ -14,7 +14,9 @@ ll  fun(ll m, ll n)
 int main() 
 { 
     ll m,n;
+    cout<<"Input numbers m and n:";
     cin>>m>>n;
+   
    cout<<"The total number of possible sequences that we get are:"<<fun(m,n);
     return 0; 
 }
