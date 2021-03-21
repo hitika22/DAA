@@ -64,3 +64,9 @@ The space complexity is O(m^n)
 The space complexity is O(m*n)
 ```
 ---
+
+### References
+
+torialcuphttps://www.tu.com/interview/dynamic-programming/sequences-of-given-length-where-every-element-is-more-than-or-equal-to-twice-of-previous.htm
+
+https://www.geeksforgeeks.org/sequences-given-length-every-element-equal-twice-previous/
