@@ -19,9 +19,9 @@ using divide and conquer algorithm.
 
 
 ### Theory
-algo1 : We use recursion with recursive function fun(n,m) =  fun(m-1, n) + fun(m/2, n-1); 
+Algorithm 1 : We use recursion with recursive function as fun(n,m) =  fun(m-1, n) + fun(m/2, n-1); 
 
 
-algo2 : We use tabular form with dynamic programming approach 
+Algorithm 2 : We use dynamic programming approach via tabulation.
 
 ---
