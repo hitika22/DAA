@@ -1,0 +1,147 @@
+2\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{textcomp}
+\usepackage{epsfig}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\pgfplotsset{width=10cm,compat=1.9}
+ \usepgfplotslibrary{external}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\tikzexternalize 
+\begin{document}
+
+\title{ Sequences of given length where every element is more than or equal to twice of previous.\\
+\text{\Large{DAA ASSIGNMENT-4 , GROUP 8}}
+}
+\author{\IEEEauthorblockN{Hitika Rajesh kumar }
+\IEEEauthorblockA{ \text{IIB2019021}}
+\and
+\IEEEauthorblockN{Gaurav yadav}
+\IEEEauthorblockA{ \text{IIB2019022}}
+\and
+\IEEEauthorblockN{Aditya raj}
+\IEEEauthorblockA{ \text{IIB2019023}}
+}
+
+\maketitle
+
+\begin{abstract}
+Given two integers m & n, find the number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m.\end{abstract}
+
+\section{Introduction}
+For finding the number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m can be solved using recursion. Wherever we see a recursive solution that has repeated calls for the same inputs, we can optimize it using Dynamic Programming. Simple optimization reduces time complexities from exponential to polynomial.
+\section{Algorithmic Design}
+
+\subsection{ \textbf{Approach  1(By Recursion)}}
+\begin{enumerate}
+\item Take input of integers n and m in variables n and m respectively.
+\item We will call function with parameters as n and m which will compute the answer.
+\item Used function is using a recursive approach to find the answer.
+\item  Base cases for this function is when m is less than n then we will return zero and also when n will become zero then we will return
+\item We will call the function : return fun(m-1, n) + fun(m/2, n-1); 
+\end{enumerate}
+
+\textbf{Algorithm 1}\\
+{Input:} N(length of sequence) and M(upper bound on sequence elements)
+
+{Output:} Number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m.
+
+{Method:}
+\begin{enumerate}
+\item Call the solve function with parameters as n and m: solve(n,m)
+\item if (m $\displaystyle<$ n) We will return 0 
+\item if (n == 0) We will return 1 
+\item We will recur the function fun(m-1, n) + fun(m/2, n-1)
+\item And return the value as ans.
+\end{enumerate}
+
+
+\subsection{ \textbf{Approach  2(By Dynamic Programming)}}
+\begin{enumerate}
+\item Take input of integers n and m in variables n and m respectively. 
+\item Initializing the array dp[m][n] as  zero.
+\item Then from i=1 to i<=m initialising dp[i][1]=1 as there will be only one way to create a sequence of size n(where n=1 ,this is the base case),where the sequence is ending at i.
+\item Prefix sum algorithm is being used in this question here and precomputation technique
+\item After that the prefix sum technique is being applied then for the given n at last the sum from i=1 to i<=m is being done compute the final answer
+\item printing the ans i.e the no. of total ways to form a sequence of length n from 1 to m.
+\end{enumerate}
+
+\textbf{Algorithm 2}\\
+{Input:} N(length of sequence) and M(upper bound on sequence elements)\\
+{Output:} Number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m.\\
+Method:\\
+Initialize a 2-D array dp[m+1][n+1]\\
+
+for   i=0 to i=m  \\
+		\tab for  j=0 to j=n\\
+			\tab \tab dp[i][j] = 0;\\
+	
+for  i=1 to i=m\\
+		\tab Initialize dp[i][1] = 1; \\
+	
+for  i = 2 to i=n \\
+		\tab for j = 1 to j=m\\
+			\tab \tab dp[j * 2][i] += dp[j][i - 1];\\
+		
+		\tab for  j = 1 to j=m\\
+			\tab \tab dp[j][i] += dp[j - 1][i];\\
+		
+	
+We will declare a variable ans and initialize it to 0\\
+	for i = 1 to i = m\\
+		\tab ans += dp[i][n];\\
+	
+Finally we will return the ans as output.\\
+
+\section{Algorithm Analysis}
+\textbf{Algorithm 1(By Recursion)}\\
+Time Complexity Analysis:\\
+Worst case : O($\displaystyle{m}^{n}$)\\
+Best case  : $\displaystyle\Omega{\left({1}\right)}$ when $ \displaystyle{n}={1}$\\
+Space Complexity Analysis:\\
+Space complexity is O(1)
+
+\textbf{Algorithm 2(By Dynamic Programming)}\\
+Time Complexity Analysis:\\
+O(N*M), because the states for the problem are the length of the sequence and the maximum number which can be considered. Thus the time complexity is polynomial.\\
+Space Complexity Analysis:\\
+O(N*M), because we have created a 2D. DP table to store the intermediate results. The space complexity is also polynomial.
+
+\section{Experimental study}
+
+\subsection{Approach 1(By recursion)}
+\includegraphics[scale=0.42]{images/recmvstime.jpeg}\\
+\\
+\includegraphics[scale=0.42]{images/recnvstime.jpeg}
+\subsection{Approach 2(By Dynamic Programming)}
+\includegraphics[scale=0.42]{images/dpmvstime.jpeg}\\
+\\
+\includegraphics[scale=0.42]{images/dpnvstime.jpeg}
+\section{Conclusion}
+Above two methods have different time complexities and meet to fulfill the problem statement. The order in which they are good can be listed as:
+\\I. Approach 2 which is the DP in tabular form
+\\II. Approach 1 which is the recursive approach
+\\Based on the time complexities.
+\section{REFERENCES}\\
+\textit{1).https://www.geeksforgeeks.org/sequences-given-length-every-element-equal-twice-previous/}\\
+\textit{2).https://www.tutorialcup.com/interview/dynamic-programming/sequences-of-given-length-where-every-element-is-more-than-or-equal-to-twice-of-previous.htm}\\
+
+\end{document}
