@@ -6,7 +6,9 @@ typedef long long int ll;
 ll dp[1000][1000];
 int main() {
 
-	ll m, n; cin >> m >> n;
+	ll m, n; 
+	cout<<"Input numbers m and n:";
+	cin >> m >> n;
 	for (int i = 0; i <= m; i++) {
 		for (int j = 0; j <= n; j++) {
 			dp[i][j] = 0;
@@ -27,5 +29,5 @@ int main() {
 	for (int i = 1; i <= m; i++) {
 		ans += dp[i][n];
 	}
-	cout << ans << endl;
+	cout <<"Total no. of sequences:"<< ans << endl;
 }
