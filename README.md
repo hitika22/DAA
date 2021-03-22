@@ -41,6 +41,27 @@ Number of possible sequences of length n such that each of the next element is g
 ```
 ---
 
+
+**Test case**
+
+Test Case-1
+```
+Input:
+5  2
+
+Output:
+6
+```
+Test Case-2
+```
+Input:
+10 4
+
+Output:
+4
+```
+
+
 ### Theory
 Algorithm 1 : We use recursion with recursive function as fun(n,m) =  fun(m-1, n) + fun(m/2, n-1); 
 
