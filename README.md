@@ -69,7 +69,7 @@ Best case  : Ω(1) when answer is 0
 
 ```
 #Algo 1 :
-The space complexity is O(m^n)
+The space complexity is O(1)
 
 #Algo 2 :
 The space complexity is O(m*n)
